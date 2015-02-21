@@ -1,0 +1,30 @@
+<div>
+  <h2>{{comix.name}}</h2>
+  {{ error }}
+
+    <div class="container slider"
+         ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()">
+        <div>
+            <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
+                 ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+        </div>
+
+            <a class="arrow prev" ng-click="nextSlide()"></a>
+            <a class="arrow next" ng-click="prevSlide()"></a>
+            <ncontainerav class="nav">
+                <div class="wrapper">
+                    <ul class="dots">
+                        <li class="dot" ng-repeat="slide in slides">
+                            <a ng-class="{'active':isCurrentSlideIndex($index)}"
+                               ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+    </div>
+
+    <a href="#/main">Back to main</a></br>
+    <img ng-src="/assets/img/totoro_walks2.gif" />
+
+</div>
+

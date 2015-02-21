@@ -1,0 +1,27 @@
+<div>
+
+<!--
+    {{ comixName }}
+    <form name="searchComix" ng-submit="search(comixName)">
+        <input type="search" required ng-model="comixName" />
+        <input type="submit" value="Search" />
+    </form>
+
+  <img ng-src="http://www.gravatar.com/avatar/{{user.gravatar_id}}" title="{{comix.name}}">Order:
+  
+  <select ng-model="comixSortOrder">
+    <option value="+name">Name</option>
+    <option value="-stargazers_count">Stars</option>
+    <option value="+language">Language</option>
+  </select>
+  
+</div>
+-->
+
+<div>
+    <div ng-repeat="comix in comixes | orderBy:comixSortOrder" ng-click="toComix(comix.name)" class="pointer">
+        <img ng-src="{{comix.image}}" alt="{{comix.name}}" />
+    </div>
+</div>
+
+</div>
